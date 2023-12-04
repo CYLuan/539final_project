@@ -1,0 +1,481 @@
+html{
+  scroll-behavior: smooth;
+
+}
+body {
+  font-family: 'Albert Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #3E693E;
+  margin: 0;
+  padding: 0;
+  background-color: #e9e1e5;
+}
+
+h1{
+  font-size: 2.5em;
+}
+
+h2{
+  font-size: 2em;
+}
+
+h3{
+  font-size: 1.3em;
+}
+
+p{
+  font-size: 1.1em;
+  color: #374F37;
+}
+
+header {
+  padding: 1rem 0;
+  
+}
+
+header a{
+  text-decoration: none; 
+}
+
+
+/* Navigation Menu*/
+nav{
+  position: fixed; /* Keeps the navbar fixed at the top of the viewport */
+  top: 0; /* Aligns the navbar to the top of the viewport */
+  left: 0; /* Aligns the navbar to the left of the viewport */
+  width: 100%; /* Ensures the navbar extends across the full width of the viewport */
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  background-color: #e9e1e5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+
+
+nav ul li {
+  display: inline;
+ 
+}
+
+nav ul li a {
+  /* color: #fff; */
+  text-decoration: none;
+  color: #374F37;
+  margin: 0 10px;
+  
+}
+nav ul li a.active{
+  font-weight: bold;
+  border: #933E69 solid 3px;
+}
+nav ul li a:hover {
+font-size: 1.2em;
+font-weight: bold;
+}
+
+/* Banner */
+/* Logo Pic */
+
+
+.logo {
+  width: 90px;
+  height: 160px;
+  display: block;
+  margin: 0 auto;
+  position: relative; /* Needed for absolute positioning of bubbles */
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bubble {
+  position: absolute;
+  width: 10px; /* Bubble size */
+  height: 10px; /* Bubble size */
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0; /* Bubbles start out invisible */
+  animation: bubbleRise 3s infinite ease-in;
+}
+
+/* Create unique positions and animation delays for each bubble */
+.logo .bubble:nth-child(2) {
+  left: 20%;
+  animation-delay: 0.2s;
+}
+
+.logo .bubble:nth-child(3) {
+  left: 50%;
+  animation-delay: 0.4s;
+}
+
+.logo .bubble:nth-child(1) {
+  left: 80%;
+  animation-delay: 0.6s;
+}
+
+/* Keyframes for bubble animation */
+
+@keyframes bubbleRise {
+  0% {
+      bottom: 10%;
+      opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+}
+  100% {
+      bottom: 100%; /* Rise to the top */
+      opacity: 0;
+  }
+}
+
+
+
+/* Other Banner */
+.banner h2{
+  text-align: center;
+  color: #333;
+  margin: 0;
+  font-family: "brush script MT", cursive;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 4%;
+}
+
+.banner h1 {
+  
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+section h2{
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+}
+
+footer p {
+  color: #fff;
+}
+/* Icon after each sections' h2  */
+.header-icon {
+  /* margin-left: 10px; 
+  vertical-align: middle;  */
+  width: 20px;
+  height: 20px;
+}
+
+#top-picks,
+
+/* Top Picks */
+
+#top-picks, #more, #about {
+  scroll-margin-top: 50px;
+  margin: 4%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  gap: 2rem; /* Adjust the gap to your liking */
+  padding: 1rem;
+ 
+}
+.card-link {
+  text-decoration: none; /* Removes the underline from links */
+  color: inherit; /* Inherits the color from parent elements */
+}
+
+.card {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
+}
+
+
+.card-image {
+  width: 100%;
+  height: 400px;
+  display: block; /* Ensure image fits the container */
+  object-fit: cover; /* Prevent image from stretching */
+  padding: 3px;
+  background-color: #333; /* Light background for the image */
+  box-sizing: border-box;   
+  transition: opacity 0.3s ease;
+
+}
+.card-icon {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the icon */
+  max-width: 80px;
+  max-height: 80px;
+  opacity: 0; /* Icon is initially invisible */
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-image {
+  opacity: 0.5; /* Dim the image on hover */
+}
+
+.card:hover .card-icon {
+  opacity: 1; /* Show the icon on hover */
+}
+
+.card-content {
+  padding: 1rem;
+  /* background-color: #fafafa;  */
+  /* Light background for the text area */
+  flex: 1; /* Makes the content fill the space left by the image */
+}
+
+.card-date {
+  font-size: 0.8rem;}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-top: 0.5rem; /* Adjust as needed */
+}
+
+
+/* Other Great finds */
+
+
+
+#more h2{
+  margin-bottom: 40px;
+}
+
+.shop-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 2%;
+}
+
+.shop-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Space between items */
+}
+
+.shop-item a{
+  color: inherit;
+}
+
+
+.shop-image {
+  border-radius: 50%; /* Makes the image round */
+  border: 2px solid #333;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  object-fit: cover; /* Ensures the image covers the area */
+  margin-right: 15px; /* Space between image and text */
+  transition: transform 0.3s ease;
+}
+
+.shop-image:hover {
+  transform: scale(1.1); /* Increases the size of the image on hover */
+}
+
+.shop-info h3 {
+  margin-top: 0;
+  margin-bottom: 5px; /* Adjust spacing as needed */
+  font-size: 1.2rem;
+}
+
+.shop-info p {
+  margin-top: 0;
+}
+
+
+
+/* About */
+
+
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 4%;
+}
+
+
+
+.about-me img, .about-me h2, .about-me p {
+  margin-bottom: 10px;
+}
+.about-me h2, .about-me p {
+  /* text-indent: 20px; */
+  color: #374F37;
+} 
+
+
+.profile-pic {
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* Make sure width and height are equal for a perfect circle */
+  /* border-radius: 50%; This creates the circular shape */
+  object-fit: cover; /* This ensures the image covers the area, useful for non-square images */
+  border: 2px solid #333; /*adds a border around the image */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* a subtle shadow for depth */
+}
+
+.linkedin{
+  width: 40px;
+  height: 40px;
+ 
+}
+
+
+/* Detail Page */
+
+.shop-hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 4%;
+}
+.shop-hero > *{
+  margin: 10px 40px;
+}
+
+.detail-img{
+  width: 50%;
+  height: 450px;
+  display: block; /* Ensure image fits the container */
+  object-fit: cover; /* Prevent image from stretching */
+  padding: 3px;
+  background-color: #333; /* Light background for the image */
+  box-sizing: border-box;   
+  transition: opacity 0.3s ease;
+}
+
+/* Add as many nth-child styles as you have bubbles for random placement */
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller desktops and tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  #top-picks, #more, #about {
+      scroll-margin-top: 100px;
+  }
+  nav{
+    background-color: #e9e1e5;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+
+
+nav ul li {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.banner{
+  margin-top: 150px;
+}
+ 
+  .container {
+      grid-template-columns: 1fr; /* Single column for mobile */
+  }
+  .shop-item {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+    align-items: start;
+}
+
+  .shop-image {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add space below the image */
+}
+.detail-img{
+  width: 50%;
+  height: auto;
+  display: block; /* Ensure image fits the container */
+  object-fit: cover; /* Prevent image from stretching */
+  padding: 3px;
+  background-color: #333; /* Light background for the image */
+  box-sizing: border-box;   
+  transition: opacity 0.3s ease;
+  margin-top: 150px;
+}
+ iframe{
+    width: 80%;
+    height: 300px;
+ }
+}
+
+/*skip to main content*/
+/* Hidden by default */
+.skip-link {
+  position: absolute;
+  top: -50px; /* move it out of the viewport */
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000; /* ensure it's on top of other content if it becomes visible */
+  transition: top 0.2s;
+}
+
+/* Visible when focused */
+.skip-link:focus {
+  top: 0;
+} 
+
+@media screen and (prefers-reduced-motion) {
+  .bubble {
+    animation: none;
+    opacity: 0;   /* Set the opacity to the final state of the animation */
+  }
+}
