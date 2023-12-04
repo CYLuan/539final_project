@@ -470,7 +470,7 @@ nav ul li {
 
 /* Visible when focused */
 .skip-link:focus {
-  top: 0;
+  top: 100px;
 } 
 
 @media screen and (prefers-reduced-motion) {
