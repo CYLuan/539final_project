@@ -79,6 +79,15 @@ font-size: 1.2em;
 font-weight: bold;
 }
 
+/* scrolling effect */
+.fade-effect {
+  opacity: 0; /* Start elements as invisible */
+  transition: opacity 1s ease-out;
+  transform: translateY(20px);  
+  
+}
+
+
 /* Banner */
 /* Logo Pic */
 
@@ -479,3 +488,8 @@ nav ul li {
     opacity: 0;   /* Set the opacity to the final state of the animation */
   }
 }
+/* set height for each section */
+.banner{
+  height: 80vh;
+}
+
