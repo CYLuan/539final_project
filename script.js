@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 entry.target.style.transform = "translateY(0)"; // Slide effect
             } else {
                 entry.target.style.opacity = 0; // Fade out when out of viewport
-                entry.target.style.transform = "translateY(20px)"; // Slide effect
+                entry.target.style.transform = "translateY(30px)"; // Slide effect
             }
         });
     }, {

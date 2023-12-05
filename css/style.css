@@ -82,8 +82,8 @@ font-weight: bold;
 /* scrolling effect */
 .fade-effect {
   opacity: 0; /* Start elements as invisible */
-  transition: opacity 1s ease-out;
-  transform: translateY(20px);  
+  transition: opacity 1s ease-in-out;
+  transform: translateY(30px);  
   
 }
 
